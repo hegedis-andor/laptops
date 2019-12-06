@@ -1,0 +1,25 @@
+h2 {
+  margin: 1rem 1.5rem 0 1.5rem;
+  padding: 0 1rem 1.5rem 1rem;
+}
+
+.container {
+  background: #fff;
+  border-radius: 20px;
+  display: inline-block;
+  position: sticky;
+  top: 2rem;
+  width: 22rem;
+  height: 58rem;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.16), 0 3px 4px rgba(0, 0, 0, 0.23);
+}
+
+.filter-item {
+  margin: 0 1.5rem;
+  padding: 0.9rem;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.089);
+}
+
+.width {
+  width: 100%;
+}

@@ -1,0 +1,11 @@
+<div fxLayout="column">
+  <h3>{{ title }}</h3>
+
+  <form [formGroup]="checkBoxForm">
+    <div *ngFor="let item of checkBoxForm.controls['checkboxes'].controls; let i = index">
+      <app-checkbox (change)="onChecked(checkBoxForm)" [formControl]="item" [id]="items[i]" >
+        {{ items[i] }}
+      </app-checkbox>
+    </div>
+  </form>
+</div>

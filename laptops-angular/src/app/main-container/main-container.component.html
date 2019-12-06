@@ -1,0 +1,25 @@
+<div fxLayout="row" fxLayoutGap="20px" class="container">
+  <app-filter-sidebar></app-filter-sidebar>
+
+  <div fxLayout="row wrap" fxLayoutGap="20px" fxFlex class="mat-card-container">
+    <div *ngFor="let laptop of laptops$ | async" class="mat-card-item">
+      <app-card-mat [laptop]="laptop" (imageClicked)="openImageModal($event)"></app-card-mat>
+    </div>
+  </div>
+
+  <div class="error-message" *ngIf="error$ | async">
+    status code: {{ (error$ | async)?.status }} <br />
+    status text: {{ (error$ | async)?.statusText }}
+  </div>
+</div>
+
+
+<!--
+<app-card>
+
+</app-card>
+
+<div style="width: 20%;">
+  <app-card-mat [laptop]="(laptops$ | async)[0]" (imageClicked)="openImageModal($event)"></app-card-mat>
+</div>
+ -->

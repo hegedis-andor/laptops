@@ -1,0 +1,7 @@
+<mat-form-field class="full-width">
+  <mat-label>{{ title }}</mat-label>
+
+  <mat-select (selectionChange)="onSelection($event.value)" [formControl]="itemsControl" multiple>
+    <mat-option *ngFor="let item of items" [value]="item">{{ item }}</mat-option>
+  </mat-select>
+</mat-form-field>

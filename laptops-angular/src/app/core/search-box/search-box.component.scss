@@ -1,0 +1,97 @@
+$primary-color: rgb(103, 58, 183);
+$secondary-color: rgba(0, 0, 0, 0.57);
+
+.input-wrapper {
+  margin: 0;
+  padding: 0;
+
+  input {
+    width: 100%;
+    border: none;
+    outline: 0;
+    background-color: transparent;
+    font-size: 1rem;
+  }
+
+  .placeholder {
+    position: relative;
+    top: -1.5rem;
+    box-sizing: border-box;
+    height: 1rem;
+    font-size: 1rem;
+    color: $secondary-color;
+    cursor: text;
+    font-weight: 500;
+  }
+
+  .placeholder-dirty {
+    position: relative;
+    top: -3rem;
+    box-sizing: border-box;
+    height: 1rem;
+    font-size: 0.8rem;
+    color: $secondary-color;
+    cursor: text;
+    font-weight: 500;
+  }
+
+  .bottom-line {
+    position: relative;
+    top: -0.8rem;
+    box-sizing: border-box;
+    height: 2px;
+    border-bottom: 1px solid $secondary-color;
+  }
+}
+
+input:focus ~ .bottom-line {
+  animation: borderBottomAnimation 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}
+
+@keyframes borderBottomAnimation {
+  0% {
+    border-bottom: 1px solid $secondary-color;
+    margin-left: 5%;
+    margin-right: 10%;
+    width: 90%;
+  }
+  100% {
+    border-bottom: 2px solid $primary-color;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+
+input:focus ~ .placeholder {
+  animation: placeholderAnimation 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}
+
+@keyframes placeholderAnimation {
+  0% {
+    font-size: 1rem;
+    color: $secondary-color;
+    top: -1rem;
+  }
+  100% {
+    font-size: 0.8rem;
+    top: -3rem;
+    color: $primary-color;
+    font-weight: 500;
+  }
+}
+
+input:focus ~ .placeholder-dirty {
+  animation: placeholderDirtyAnimation 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}
+
+@keyframes placeholderDirtyAnimation {
+  0% {
+    color: $secondary-color;
+  }
+  100% {
+    top: -3rem;
+    color: $primary-color;
+    font-weight: 500;
+  }
+}

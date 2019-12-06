@@ -1,0 +1,60 @@
+<div fxLayout="column" class="container">
+  <h2>Laptop Filter:</h2>
+
+  <div class="filter-item">
+    <app-search-box [placeholder]="searchBoxTitle" (searchText)="setLaptopName($event)"></app-search-box>
+  </div>
+
+  <div class="filter-item">
+    <app-select-option-mat
+      [title]="cpuCoresTitle"
+      [items]="cpuCoresDropdownItems$ | async"
+      (selectionChanged)="setCpuCores($event)"
+    ></app-select-option-mat>
+  </div>
+
+  <div class="filter-item">
+    <app-multi-select
+      [placeholder]="displayResolutionTitle"
+      [options]="displayResolutionDropdownItems$ | async"
+      (selectionChanged)="setDisplayResolution($event)"
+    ></app-multi-select>
+  </div>
+
+  <div class="filter-item">
+    <app-checkbox-group
+      [title]="cpuProducersTitle"
+      [items]="cpuProducersCheckboxItems$ | async"
+      (checkedBoxes)="setCpuProducers($event)"
+    ></app-checkbox-group>
+  </div>
+
+  <div class="filter-item">
+    <app-radiobutton-group
+      [title]="dedicatedGpuTitle"
+      [options]="dedicatedGpuRadioButtonOptions$ | async"
+      [optionChecked]="2"
+      (radioButtonChange)="setDedicatedGpu($event)"
+    ></app-radiobutton-group>
+  </div>
+
+  <div class="filter-item">
+    <app-slider
+      [value]="sliderMaxPrice$ | async"
+      [maxValue]="sliderMaxPrice$ | async"
+      [title]="sliderMaxPriceTitle"
+      (valueChanged)="setMaxPrice($event)"
+    ></app-slider>
+  </div>
+
+  <div class="filter-item">
+    <h3>Price range:</h3>
+    <app-range-slider
+      [currentMaxValue]="sliderCurrentMaxPrice$ | async"
+      [minInputValue]="sliderMinPrice$ | async"
+      [maxInputValue]="sliderMaxPrice$ | async"
+      (minValueChanged)="setMinPrice($event)"
+      (maxValueChanged)="setMaxPrice($event)"
+    ></app-range-slider>
+  </div>
+</div>

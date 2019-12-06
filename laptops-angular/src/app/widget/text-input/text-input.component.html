@@ -1,0 +1,11 @@
+<div class="input-wrapper">
+    <label for="inputText">
+      <input (keyup)="onKeyup(input.value)" (blur)="onBlur(input.value)" type="text" id="inputText" #input />
+
+      <div [ngClass]="dirty ? 'placeholder-dirty' : 'placeholder'">
+        {{ placeholder }}
+      </div>
+
+      <div class="bottom-line"></div>
+    </label>
+  </div>

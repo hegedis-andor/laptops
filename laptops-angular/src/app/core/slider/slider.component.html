@@ -1,0 +1,11 @@
+<h3>{{ title }}</h3>
+<mat-slider
+  class="slider"
+  thumbLabel="true"
+  [tickInterval]="interval"
+  [min]="minValue"
+  [max]="maxValue"
+  [value]="value"
+  (change)="onChange($event.value)"
+
+></mat-slider>

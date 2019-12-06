@@ -4,7 +4,7 @@ pipeline {
     stage('lint') {
       steps {
         sh 'cd laptops-angular'
-        sh 'npm run lin'
+        sh 'npm run lint'
       }
     }
 

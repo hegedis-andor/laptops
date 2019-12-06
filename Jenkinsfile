@@ -3,13 +3,13 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        sh "npm run test"
+        echo 'Test run'
       }
     }
 
     stage('Build') {
       steps {
-        sh "ng build --prod"
+        echo 'Buil run'
       }
     }
 

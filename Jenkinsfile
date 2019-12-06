@@ -5,13 +5,13 @@ pipeline {
       parallel {
         stage('test') {
           steps {
-            sh 'sh "npm run test"'
+            sh 'npm run test'
           }
         }
 
         stage('lint') {
           steps {
-            sh 'sh "npm run lint"'
+            sh 'npm run lint'
           }
         }
 
@@ -20,7 +20,7 @@ pipeline {
 
     stage('buil') {
       steps {
-        sh 'sh "ng build --prod"'
+        sh 'ng build --prod'
       }
     }
 

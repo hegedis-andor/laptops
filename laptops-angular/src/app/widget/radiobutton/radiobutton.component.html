@@ -1,0 +1,6 @@
+<label for="{{ id }}" >
+    <input type="radio" [name]="name" [id]="id" (change)="onClick()" [checked]="checked"/>
+    <span class="circle"></span>
+
+    <ng-content></ng-content>
+  </label>

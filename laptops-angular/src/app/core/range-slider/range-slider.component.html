@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="boundary">
+    <div class="range-body" #range></div>
+
+    <div class="knob-container">
+      <div
+        #knob
+        class="slider-knob left-knob"
+        cdkDrag
+        cdkDragLockAxis="x"
+        cdkDragBoundary=".boundary"
+        (cdkDragMoved)="onKnobOneDrag($event.source._dragRef._activeTransform.x)"
+      >
+        <div class="knob-label">{{ knobOne }}</div>
+      </div>
+
+      <div
+        class="slider-knob rigth-knob"
+        cdkDrag
+        cdkDragLockAxis="x"
+        cdkDragBoundary=".boundary"
+        (cdkDragMoved)="onKnobTwotDrag($event.source._dragRef._activeTransform.x)"
+        [cdkDragFreeDragPosition]="dragPosition"
+      >
+        <div class="knob-label">{{ knobTwo }}</div>
+      </div>
+    </div>
+  </div>
+</div>

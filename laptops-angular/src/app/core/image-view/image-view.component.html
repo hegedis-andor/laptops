@@ -1,0 +1,21 @@
+<div fxLayout="row" class="container">
+  <div fxLayoutAlign="start center" class="disable-user-select">
+    <mat-icon (click)="prevImage()" class="icon shadow ">arrow_left</mat-icon>
+  </div>
+
+  <div class="shadow radius" class="disable-user-select">
+    <img class="main-img shadow radius" src="{{ currentImage }}" />
+  </div>
+
+  <div fxLayoutAlign="end center" class="disable-user-select">
+    <mat-icon (click)="nextImage()" class="icon shadow">arrow_right</mat-icon>
+  </div>
+</div>
+
+<div fxLayout="column " class="container disable-user-select" >
+  <div class="preview-container shadow radius" fxLayoutAlign="center center" fxLayout="row wrap">
+    <div *ngFor="let img of imageUrls; let i = index">
+      <img (click)="openImage(i)" class="preview-img" src="{{ img }}" />
+    </div>
+  </div>
+</div>

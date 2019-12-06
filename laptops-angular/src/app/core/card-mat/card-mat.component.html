@@ -1,0 +1,31 @@
+<mat-card class="card">
+  <mat-card-header>
+    <div class="title-container">
+      <mat-card-title class="title">{{ laptop.name }}</mat-card-title>
+      <mat-card-subtitle>Launch: {{ laptop.launchDate }}</mat-card-subtitle>
+    </div>
+  </mat-card-header>
+
+  <div class="img-container">
+    <img
+      (click)="clickOnImage(laptop.imgUrls)"
+      mat-card-image
+      src="{{ laptop.imgUrls[0] }}"
+      alt="photo of {{ laptop.name }} laptop"
+    />
+  </div>
+
+  <mat-card-content>
+    <div class="content">
+      <p><span class="bolder">CPU: </span> {{ laptop.cpu.prod }} {{ laptop.cpu.model }}, {{ laptop.cpu.cores }} cores</p>
+      <p><span class="bolder">GPU: </span> {{ laptop.gpu.prod }}, {{ laptop.gpu.model }}</p>
+      <p>
+        <span class="bolder">Display: </span> {{ laptop.display.size }} inch, {{ laptop.display.resolution }},
+        {{ laptop.display.type }}
+      </p>
+    </div>
+  </mat-card-content>
+  <div class="footer">
+    <mat-card-footer>Price: {{ laptop.price | currency }}</mat-card-footer>
+  </div>
+</mat-card>

@@ -1,0 +1,54 @@
+label {
+  position: relative;
+  padding-left: 1.5rem;
+  cursor: pointer;
+  user-select: none;
+  font-size: 1rem;
+}
+
+// hiding the original checkbox
+label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0.05rem;
+  left: 0;
+  width: 0.9rem;
+  height: 0.9rem;
+  border: 2px solid rgba(0, 0, 0, 0.589);
+  border-radius: 0.2rem;
+  cursor: pointer;
+}
+
+label:hover .checkmark {
+  box-shadow: 0 0 0 0.4rem rgba(0, 0, 0, 0.05);
+}
+
+.checkmark:after {
+  position: absolute;
+  display: none;
+  content: "";
+}
+
+label input:checked ~ .checkmark:after {
+  display: block;
+
+}
+
+label .checkmark:after {
+  left: 0.27rem;
+  top: -0.03rem;
+  width: 0.2rem;
+  height: 0.65rem;
+  border: solid rgb(255, 214, 64, 1);
+  border-width: 0 0.19rem 0.19rem 0;
+  transform: rotate(45deg);
+}

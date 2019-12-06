@@ -1,0 +1,16 @@
+<label for="{{ id }}">
+  <input
+    type="checkbox"
+    [id]="id"
+    [required]="required"
+    [checked]="checked"
+    [name]="name"
+    [tabIndex]="tabIndex"
+    [disabled]="disabled"
+    (change)="onClick()"
+  />
+
+  <span [@checking]="checked ? 'checked' : 'unChecked'" class="checkmark"></span>
+
+  <ng-content></ng-content>
+</label>

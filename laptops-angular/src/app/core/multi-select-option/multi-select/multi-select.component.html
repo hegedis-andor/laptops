@@ -1,0 +1,16 @@
+<div class="input-wrapper">
+  <div (click)="openDropDown(parentReference)" class="input" #parentReference>
+    <input
+      #input
+      [placeholder]="placeholder"
+      [ngClass]="isThereSelected ? ' highlight' : 'no-highlight'"
+      readonly
+      autocomplete="off" />
+
+    <mat-icon
+      class="dropdown-arrow"
+      [ngClass]="isThereSelected ? ' highlight' : 'no-highlight'">
+      keyboard_arrow_down</mat-icon
+    >
+  </div>
+</div>

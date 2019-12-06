@@ -1,0 +1,26 @@
+<mat-radio-group aria-label="Select an option">
+  <div>
+    <h3>{{ title }}</h3>
+
+    <div fxLayout="column">
+      <div
+        *ngFor="let option of radiobuttonForm.controls['radiobuttons'].controls; let i = index; let i = index"
+        class="radio-button"
+      >
+        <!--         <mat-radio-button
+          [checked]="i === optionChecked"
+          (change)="onChange($event.value)"
+          value="{{ option }}"
+          >{{ option }}</mat-radio-button
+        > -->
+        <app-radiobutton
+          [checked]="i === optionChecked"
+          (change)="onChange(options[i])"
+          [id]="options[i]"
+          [name]="'gpus'"
+          >{{ options[i] }}</app-radiobutton
+        >
+      </div>
+    </div>
+  </div>
+</mat-radio-group>
